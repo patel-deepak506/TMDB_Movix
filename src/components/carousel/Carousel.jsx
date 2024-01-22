@@ -30,21 +30,17 @@ const Carousel = ({ data, loading , endPoint , title}) => {
   }
   const skItem = ()=>{
     <div className="skeletonItem">
-      <div className="posterBlock skeleton">
+      <div className="posterBlock skeleton"> </div>
         <div className="textBlock">
           <div className="text skeleton"> </div>
           <div className="date skeleton"> </div>
         </div>
-      </div>
-
     </div>
   }
   return (
     <div className="carousel">
       <ContentWrapper>
-        {title && <div className="carouselTitle">
-          {title}
-        </div> }
+        {title && <div className="carouselTitle"> {title} </div> }
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation('left')} />
@@ -68,6 +64,7 @@ const Carousel = ({ data, loading , endPoint , title}) => {
                       <CircleRating rating= {item.vote_average.toFixed(1)} />
                       <Genres data = {item?.genre_ids?.slice(0,2)} />
                     </div>
+                    
                     <div className="textBlock">
                       <span className="title">
                         {item.title || item.name}
